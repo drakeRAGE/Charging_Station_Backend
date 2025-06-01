@@ -71,7 +71,7 @@ const deleteChargingStation = asyncHandler(async (req, res) => {
   const chargingStation = await ChargingStation.findById(req.params.id);
 
   if (chargingStation) {
-    await chargingStation.remove();
+    await ChargingStation.deleteOne({ _id: req.params.id });
     res.json({ message: 'Charging station removed' });
   } else {
     res.status(404);
