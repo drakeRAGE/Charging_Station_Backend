@@ -6,14 +6,8 @@ const chargingStationSchema = new mongoose.Schema({
     required: true
   },
   location: {
-    latitude: {
-      type: Number,
-      required: true
-    },
-    longitude: {
-      type: Number,
-      required: true
-    }
+    type: String, 
+    required: true
   },
   status: {
     type: String,
